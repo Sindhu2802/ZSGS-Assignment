@@ -151,31 +151,32 @@ a) 1 b) w
 
 //b.	 
 class pattern4{
-	 public static void main(String[] args)
-	 {
-		 int r = 3;
-		 int num=1;
-		 int i=1;
-		 while(i<=2*r-1)
-		 {
-			int totoalcols = (i<=r) ? i : (2*r-i);
-		    int j =1;
-		  while(j<=r)
-			 {
-				 if( j <= i )
-				 {
-					 System.out.print("W"+" ");
-					  num++;
-				 }
-				 j++;
-				
-			 }
-			 System.out.println();
-			 i++;
-		 }
-	 }
- }
-
+	public static void main(String[] args){
+		int r=3;
+		int i=1;
+		while(i <= r){
+			
+			int j=1;
+			
+			while(j <= i){
+				System.out.print("W ");
+				j++;
+			}
+			System.out.println();
+			i++;
+		}
+		i=r-1;
+		while(i >= 1){
+			int j=1;
+			while(j <= i){
+				System.out.print("W ");
+				j++;
+			}
+			System.out.println();
+			i--;
+		}
+	}
+}
  
 /*4. Write a program to do the following patterns using do...while loop?
 a) Pascal Triangle
