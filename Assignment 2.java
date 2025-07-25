@@ -87,23 +87,26 @@ class pattern1{
 
 //b R pattern 
   
-class pattern2{
-	  public static void main(String[] args)
-	  {
-		  int rows = 5;
-		  int col= 5;
-		  for(int i=0;i<rows;i++)
-		  {
-			  for(int j =0;j<col;j++)
-			  {
-		        if(i == 0 || j == 0 || i == 2 || j == col-1 && i==1 ) || (i - j == 1 && i >= 3)
-				{
-					System.out.println("R" + " ");
-			    }
-			  System.out.println();
-		  }
-	  }
-  }
+class Pattern2 {
+    public static void main(String[] args) {
+        int rows = 5;
+        int cols = 5;
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (
+                    (i == 0) ||(j == 0) ||(i == 2) ||                 
+                    (j == cols - 1 && i == 1) || 
+                    (i - j == 1 && i >= 3)) {
+                    System.out.print("R ");
+                } else {
+                    System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+}
 /*3. Write a program to do the following patterns using while loop?
 a) 1 b) w
 2 3 w w
