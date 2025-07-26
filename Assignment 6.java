@@ -121,7 +121,115 @@ public Payment(int transactionId,String payerName,String payeeName,double amount
  }
 		  
 
+
+
+//3. Design a class `Employee` with private data members: employee ID, name, designation, department, and monthly salary. Use proper getter and setter methods to access and update these fields. Add a method to calculate and return the annual salary of the employee.
+
+class Employee{
+	private int employeeId;
+	private String name;
+	private String designation;
+	private String department;
+	private double monthlySalary;
+	
+	public  Employee(int employeeId,String name,String designation,String department,double monthlySalary)
+	{
+		this.employeeId= employeeId;
+		this.name = name;
+		this.designation= designation;
+		this.department = department;
+		this.monthlySalary = monthlySalary;
+		
+	}
+	
+	public int getEmployeeId()
+	{
+		return employeeId;
+	}
+	public void setEmployeeId(int employeeId)
+	{
+		this.employeeId = employeeId;
+	}
+	public String getName(){
+		return name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	
+	public String getDesignation(){
+		return designation;
+	}
+	public void setDesignation(String designation)
+	{
+		this.designation = designation;
+	}
+	public String getDepartment(){
+		return department;
+	}
+	public void setDepartment(String department)
+	{
+		this.department = department;
+	}
+	public double getMonthlySalary(){
+		
+		return monthlySalary;
+	}
+	public void setMonthlySalary(double monthlySalary)
+	{
+		if(monthlySalary >= 0 )
+		{
+			this.monthlySalary = monthlySalary;
+		}
+		else{
+			System.out.println("Monthly salary can't be negative(-100)");
+		}
+	}
+	
+	public double calAnnualsalary(){
+		return monthlySalary * 12; // calculate annual salary
+	}
+}
+
+class EmployeeDetail{
+	public static void main(String[] args)
+	{
+		Employee em =  new Employee(223,"kumar","Manager","Techinalteam",50000.00);
+		
+		System.out.println("EmployeeId : " + em.getEmployeeId());
+		System.out.println("Name :" + em.getName());
+		System.out.println("Desgination " + em.getDesignation());
+		System.out.println("Department" + em.getDepartment());
+		System.out.println("MonthlySalary " + em.getMonthlySalary());
+		
+
+		
+		em.setMonthlySalary(60000.00); // update the setter values
+		em.setDesignation("Techinalteam");
+		
+		System.out.println("Updated the employee details");
+		System.out.println("updated monthlySalary " + em.getMonthlySalary());
+		System.out.println("updated designation " +em.getDesignation());
+		System.out.println("updated annual salary " + em.calAnnualsalary());
+		
+		em.setMonthlySalary(-100.00);
+	}
+}
+
+
+
+
+
+
+		
+		
+		
+
+
+	  
 		  
 		  
+	
 		  
 	
