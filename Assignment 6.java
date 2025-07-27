@@ -217,8 +217,67 @@ class EmployeeDetail{
 	}
 }
 
+//5. Design a class named `BankAccount` that uses the concept of encapsulation. The class should have the following private data members: account number, account holder name, and balance. Provide public getter and setter methods to access and modify these fields. Also, include a method to deposit and withdraw amount ensuring that the balance cannot go negative.*/
+		
+class BankAcc{
+   private long accountNum;
+   private String accountHolderName;
+   private double balance;
+   
+   public long getAccountNum(){
+	   return accountNum;
+   }
+	 
+   public void setAccountNum(long accountNum){
+	   this.accountNum = accountNum;
+   }
+   
+   public String getAccountHolderName()
+   {
+	   return accountHolderName;
+   }
+   public void setAccountHolderName(String accountHolderName)
+   {
+	   this.accountHolderName = accountHolderName;
+   }
+   public double getBalance(){
+	   return balance;
+   }
+   public void setBalance(double balance)
+   {
+	   this.balance = balance;
+   }
+   
+   public void depositAmount(double balance)
+   {
+	   this.balance += balance;
+	   System.out.println("deposit Balance : " + this.balance);
+   }
+    public void withdraAmount(double balance)
+	{
+		this.balance -= balance;
+		System.out.println("withdraw Balance : " + this.balance);
+	}
+   }
+	
+   class BankAccountNumber{
+   public static void main(String[] args)
+   {
+	
+      BankAcc	bank = new BankAcc();
+	  bank.setAccountNum(234567454);
+	  bank.setAccountHolderName("sindhu");
+	  bank.setBalance(40000.0);
+	  bank.withdraAmount (30000.0);
+	  bank.depositAmount(40000.0);
+   }
+}
 
 
+	  
+		  
+		  
+	
 
 
 
