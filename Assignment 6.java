@@ -119,6 +119,55 @@ public Payment(int transactionId,String payerName,String payeeName,double amount
 		 
 	 }
  }
+
+
+
+/*2. Create a Java application that demonstrates the use of user-defined packages by organising classes based on their functionality:
+--- arithmetic: This package should include a class that defines methods to perform the following operations on two numbers:
+a. Addition
+b. Subtraction
+c. Multiplication
+d. Division
+e. Modulo
+--- stringutils: This package should include a class that defines methods for:
+a. Concatenating two strings
+b. Reversing a string
+c. Finding the length of a string
+In your main class (outside those packages), import the above packages and demonstrate the usage of all the methods.*/
+
+
+class UserOwnPackage{
+	public static void main(String[] args)
+	{
+		ArithmeticOperation Math = new ArithmeticOperation();
+		int a = 5;
+		int b = 3;
+		System.out.println("Addition sum of " + Math.add(a,b));
+		System.out.println("Subtraction sum of " + Math.sub(a,b));
+		System.out.println("Multiplication sum of " + Math.mul(a,b));
+		System.out.println("Division sum of " + Math.div(a,b));
+		System.out.println("Modulo sum of " + Math.mod(a,b));
+		
+		
+		TwoString s = new TwoString();
+		String str1 = "Jeya";
+		String str2 = "Shreee";
+		String str = "Sindhu";
+		String s1 = "Nandhini";
+		
+		
+		System.out.println("___________________________________");
+		
+		
+		System.out.println("Concatenating to two Strings : " + s.concat(str1,str2));
+		System.out.println("Reversing to the String : " + s.reverse(str));
+		System.out.println("Finding the length of a String : "  + s.lengthstr(s1));
+		
+
+	}
+}
+
+‌
 		  
 
 
