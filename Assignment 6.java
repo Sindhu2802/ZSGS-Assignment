@@ -1,6 +1,8 @@
 
 import arithmetic.ArithmeticOperation;
 import stringutils.TwoString;
+import travel.booking.Booking;
+import travel.user.User;
 //*Day-6 Assignment Questions:*
 /*1. Illustrate the concept-Encapsulation with the Payment Gateway System.[The class should encapsulate private data members such as transaction ID, payer name, payee name, amount, payment method, and transaction status. Provide appropriate public getter and setter methods to access and modify these details securely. Also include a method to display the transaction summary.]
 ‌
