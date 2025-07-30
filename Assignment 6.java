@@ -267,6 +267,19 @@ class EmployeeDetail{
 	}
 }
 
+/*4. Design a travel booking system using two packages:
+`travel.booking` – includes a class `Ticket` with ticket ID, destination, and fare.
+`travel.user` – includes a class `User` with user details and a method to book a ticket.
+Illustrate accessing ticket data from within the user class.*/
+
+
+class Ticket{
+	public static void main(String[] args)
+	{
+		User us = new User("sindhu","023",323454545,"Female");
+		us.displayTicket();
+	}
+}
 //5. Design a class named `BankAccount` that uses the concept of encapsulation. The class should have the following private data members: account number, account holder name, and balance. Provide public getter and setter methods to access and modify these fields. Also, include a method to deposit and withdraw amount ensuring that the balance cannot go negative.*/
 		
 class BankAcc{
