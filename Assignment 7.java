@@ -298,5 +298,246 @@ Paid amount : 1000.0using in DebitCardPayment
 Paid amount : 500.0 using in UPIPayment*/
 
 
+/*3. Create a Java application to manage employees in a company. Define an abstract class Employee with a method calculateSalary(). 
+Then create two subclasses FullTimeEmployee and PartTimeEmployee that override calculateSalary() method based on their working type. 
+Demonstrate runtime polymorphism by calling calculateSalary() on different types of employees using the Employee reference.*/
+
+abstract class Employee{
+	String name;
+	int noOfDayswork;
+	
+	public Employee(String name,int noOfDayswork){
+		this.name = name;
+		this.noOfDayswork=noOfDayswork;
+	}
+	abstract double calculateSalary();
+	void display(){
+		System.out.println("Employee Name : " + name + " No of days work : " + noOfDayswork);
+	}
+}
+
+class FullTimeEmployee extends Employee{
+	 double monthlySalary;
+	  public FullTimeEmployee(String name,int noOfDayswork,double monthlySalary){
+		  super(name,noOfDayswork);
+		  this.monthlySalary = monthlySalary;
+	  }
+	  double calculateSalary(){
+		  return monthlySalary;
+	  }
+}
+
+class PartTimeEmployee extends Employee{
+	int workingHours;
+	int hoursSalary;
+	
+	public PartTimeEmployee(String name,int noOfDayswork,int workingHours,int hoursSalary)
+	{
+		super(name,noOfDayswork);
+		this.workingHours = workingHours;
+		this.hoursSalary = hoursSalary;
+	}
+	double calculateSalary(){
+		return workingHours * hoursSalary;
+	}
+}
+
+class EmployeeDetails{
+	public static void main(String[] args)
+	{
+		Employee employ1 = new FullTimeEmployee("Veni",15,5000);
+		Employee employ2 = new PartTimeEmployee("pandi",30,60,200);
+		
+		employ1.display();
+		System.out.println("Full time employees inform : " + employ1.calculateSalary());
+		employ2.display();
+		System.out.println("Parttime employees inform : " + employ2.calculateSalary());
+	}
+}
+
+/*Employee Name : VeniNo of days work : 15
+Full time employees inform : 5000.0
+
+Employee Name : pandiNo of days work : 30
+Parttime employees inform : 12000.0*/
+
+/*4. Create a Java application to manage employees in a company. Define an Interface Employee with a method calculateSalary().
+ Then create two subclasses FullTimeEmployee and PartTimeEmployee that override calculateSalary() method based on their working type. 
+ Demonstrate runtime polymorphism by calling calculateSalary() on different types of employees using the Employee reference.*/
+ 
+ 
+ interface Employees{
+	
+	public double calculateSalary();
+	void display();
+}
+
+class FullTimeEmployees implements Employees{
+	private String name;
+	private int noOfDayswork;
+	private double monthlySalary;
+	public FullTimeEmployees(String name,int noOfDayswork,double monthlySalary){
+		  this.name = name;
+		  this.noOfDayswork=noOfDayswork;
+		  this.monthlySalary = monthlySalary;
+	  }
+	 public double calculateSalary(){
+		  return monthlySalary;
+	  }
+	 public void display(){
+		  System.out.println("Employee name : "+ name);
+		  System.out.println("No of days work :" + noOfDayswork);
+	  }
+}
+
+class PartTimeEmployees implements Employees{
+	private String name;
+	private int noOfDayswork;
+	private int workingHours;
+	private int hoursSalary;
+	
+	public PartTimeEmployees(String name,int noOfDayswork,int workingHours,int hoursSalary)
+	{
+		this.name =name;
+		this.noOfDayswork=noOfDayswork;
+		this.workingHours = workingHours;
+		this.hoursSalary = hoursSalary;
+	}
+	public double calculateSalary(){
+		return workingHours * hoursSalary;
+	}
+	public void display() {
+        System.out.println("Part-Time Employee Name: " + name);
+        System.out.println("No of Days Worked: " + noOfDayswork);
+    }
+}
+
+class EmployeeDetail{
+	public static void main(String[] args)
+	{
+		Employees employ1 = new FullTimeEmployees("Veni",15,5000);
+		Employees employ2 = new PartTimeEmployees("pandi",30,60,200);
+		
+		employ1.display();
+		System.out.println("Full time employees inform : " + employ1.calculateSalary());
+		employ2.display();
+		System.out.println("Parttime employees inform : " + employ2.calculateSalary());
+	}
+}
+
+/*Employee name : Veni
+No of days work :15
+Full time employees inform : 5000.0
+
+Part-Time Employee Name: pandi
+No of Days Worked: 30
+Parttime employees inform : 12000.0*/
+
+
+/*5. Develop a Java application for a Ticket Booking System that allows users to book tickets for different types of transportation modes such as *Bus*, *Train*, and *Flight*.
+Define a common interface or abstract class `Ticket` with a method `bookTicket()` that each transportation mode must implement differently.
+Create classes `BusTicket`, `TrainTicket`, and `FlightTicket` that extend the abstract class or implement the interface.
+Demonstrate *runtime polymorphism* by calling the `bookTicket()` method using a reference of the base class/interface.*/
+
+interface Ticket{
+	void Booking();
+}
+
+class Bus implements Ticket{
+	private String name;
+	private String gender;
+	private String destination;
+	private int seatNo;
+	
+	public Bus(String name,String gender,String destination,int seatNo)
+	{
+		this.name = name;
+		this.gender=gender;
+		this.destination=destination;
+		this.seatNo=seatNo;
+	}
+	public void Booking(){
+		System.out.println("Bus Ticket ");
+		System.out.println("Name : " + name);
+		System.out.println("Gender : " + gender);
+		System.out.println("Destination : " + destination);
+		System.out.println("seatNo : " + seatNo);
+	}
+}
+
+class Train implements Ticket{
+	private String name;
+	private String gender;
+	private String destination;
+	private int seatNo;
+	
+	public Train(String name,String gender,String destination,int seatNo)
+	{
+		this.name = name;
+		this.gender=gender;
+		this.destination=destination;
+		this.seatNo=seatNo;
+	}
+	public void Booking(){
+		System.out.println("Train Ticket");
+		System.out.println("Name : " + name);
+		System.out.println("Gender : " + gender);
+		System.out.println("Destination : " + destination);
+		System.out.println("seatNo : " + seatNo);
+	}
+}
+
+class Flight implements Ticket{
+	private String name;
+	private String gender;
+	private String destination;
+	private int seatNo;
+	
+	public Flight(String name,String gender,String destination,int seatNo)
+	{
+		this.name = name;
+		this.gender=gender;
+		this.destination=destination;
+		this.seatNo=seatNo;
+	}
+	public void Booking(){
+		System.out.println("Flight Ticket");
+		System.out.println("Name : " + name);
+		System.out.println("Gender : " + gender);
+		System.out.println("Destination : " + destination);
+		System.out.println("seatNo : " + seatNo);
+	}
+}
+
+class BookTicket{
+	public static void main(String[] args){
+		Ticket t1 = new Bus("Kumar","Male","chennai",02);
+		t1.Booking();
+		Ticket t2 = new Train("veni","Female","kerala",53);
+		t2.Booking();
+		Ticket t3 = new Flight("Lakshimi","Female","banglore",34);
+		t3.Booking();
+	}
+}
+		
+/*Bus Ticket
+Name : Kumar
+Gender : Male
+Destination : chennai
+seatNo : 2
+
+Train Ticket
+Name : veni
+Gender : Female
+Destination : kerala
+seatNo : 53
+
+Flight Ticket
+Name : Lakshimi
+Gender : Female
+Destination : banglore
+seatNo : 34*/
+
 
 		
+
