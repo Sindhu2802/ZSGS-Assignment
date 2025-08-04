@@ -254,3 +254,49 @@ Balance :40000.0
 PNB bank InterestRate : 4.0
 PNB bank withdrwal limit :1000.0*/
 
+
+/*2. Design a Payment Gateway System using an interface named PaymentMethod with a method pay(double amount).
+ Implement this interface in different classes like CreditCardPayment, DebitCardPayment, and UPIPayment. Write a main class where you can accept payment 
+ using different methods.*/
+ 
+ interface PaymentMethod{
+	 void pay(double amount);
+ }
+ 
+ class CreditCardPayment implements PaymentMethod{
+	 public void pay(double amount){
+		 System.out.println("Paid amount : " + amount + " using  CreditCardPayment  ");
+	 }
+ }
+
+ class DebitCardPayment implements PaymentMethod{
+	 public void pay(double amount){
+		 System.out.println("Paid amount : " +amount + "using in DebitCardPayment");
+	 }
+ }
+	 
+class UPIPayment implements PaymentMethod{
+	public void pay(double amount){
+		System.out.println("Paid amount : " + amount + " using in UPIPayment");
+	}
+}
+
+class Payment{
+	public static void main(String[] args){
+         
+		CreditCardPayment  credit = new CreditCardPayment();
+		DebitCardPayment debit = new DebitCardPayment();
+		UPIPayment upi = new UPIPayment();
+		credit.pay(2000);
+		debit.pay(1000);
+		upi.pay(500);
+	}
+}
+
+/*Paid amount : 2000.0 using  CreditCardPayment
+Paid amount : 1000.0using in DebitCardPayment
+Paid amount : 500.0 using in UPIPayment*/
+
+
+
+		
