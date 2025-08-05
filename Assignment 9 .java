@@ -282,8 +282,50 @@ Exception / by zero
 Exception called pass tha methods*/
 
 
+
+
 //8. Design a login system that throws AuthenticationException if the username or password is incorrect. Handle it and display a login failure message.
 
+class Authenticate{
+	public static void main(String[] args)
+	{
+		String userName = "chandrakumar";
+		String password= "Sindhu@28";
+		
+		Scanner scan = new Scanner(System.in);
+		try{
+			System.out.println("Enter your username :" );
+			String UName = scan.nextLine();
+			if(!userName.equals(UName))
+			{
+				throw new Exception("Incorrect username ");
+			}
+		    System.out.println("Enter your password : " );
+			String pwd= scan.nextLine();
+			if(!password.equals(pwd))
+			{
+				throw new Exception("Incorrect password");
+			}
+		}
+		catch(Exception e ){
+		System.out.println("Authenticate faild " + e.getMessage());
+		}
+		System.out.println("Authenticate successfully ");
+	}
+}
+
+/*Enter your username :
+chandrakumar
+Enter your password :
+sdf
+Authenticate faild Incorrect password
+
+Enter your username :
+chandrakumar
+Enter your password :
+Sindhu@28
+Authenticate successfully
+*/
 
 
 //9. Create a method to read a file from disk. Handle FileNotFoundException and IOException using try-catch-finally.
@@ -343,6 +385,7 @@ Exception error :You are not eligible for voting
 Enter your age :
 21
 You are eligible for voting*/
+
 
 
 
