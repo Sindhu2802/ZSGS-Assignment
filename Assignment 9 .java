@@ -113,32 +113,22 @@ class Multiple{
 
 //3. Write a program to illustrate how to throw a ClassNotFoundException.
 
-/*class ClassNotFound{
+class ClassNotFound{
 	public static void main(String[] args)
 	{
 		try{
-			Class.forName("Multiple");
+
+			System.out.println(Class.forName("Kumar"));
+			System.out.println(Class.forName("har"));
 		}
-		
 		catch(ClassNotFoundException e)
 		{
-			System.out.println("ClassNotFoundException error ");
-			System.out.println("Exception message  class not found: " + e.getMessage());
+			System.out.println("Class notfound exception handled :"  + e.getMessage());
 		}
+		
 	}
-}*/
- /*class ClassNotFound {
-    public static void main(String[] args) {
-        try {
-            Class.forName("Multiple");
-        } catch (ClassNotFoundException e) {
-            System.out.println("ClassNotFoundException error ");
-            System.out.println("Exception message  class not found: " + e.getMessage());
-        }
-
-        System.out.println("End of program");
-    }
-}*/
+}
+//Class notfound exception handled :Kumar
 
 //4. Write a method to parse a string to an integer. Throw an exception if the string is not a valid number. Handle it using try-catch.
 
@@ -352,4 +342,5 @@ Exception error :You are not eligible for voting
 Enter your age :
 21
 You are eligible for voting*/
+
 
