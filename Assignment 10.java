@@ -328,12 +328,15 @@ j. compare two hash set.*/
 class HashSetProgram{
 	public static void main(String[] args)
 	{
-		HashSet<String> set = new HashSet<>();
+		LinkedHashSet<String> set = new LinkedHashSet<>();
 	    System.out.println(" a) Append hashset :" );
 		set.add("apple");
 		set.add("jackfruit");
 		set.add("green apple");
-		System.out.println("After add : " + set);
+		System.out.println("before add : " + set);
+		set.add("pulms");
+		System.out.println("After :" + set);
+
 
 //b. iterate through all elements in a hash list. 
      
